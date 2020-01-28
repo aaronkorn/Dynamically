@@ -16,6 +16,7 @@
 		8113549823E0B5E400C90A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8113549623E0B5E400C90A20 /* LaunchScreen.storyboard */; };
 		811354A123E0B73A00C90A20 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113549F23E0B73A00C90A20 /* Singer+CoreDataClass.swift */; };
 		811354A223E0B73A00C90A20 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811354A023E0B73A00C90A20 /* Singer+CoreDataProperties.swift */; };
+		811354A423E0B92D00C90A20 /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811354A323E0B92D00C90A20 /* FilteredList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8113549923E0B5E400C90A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8113549F23E0B73A00C90A20 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
 		811354A023E0B73A00C90A20 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		811354A323E0B92D00C90A20 /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				8113548823E0B5E000C90A20 /* AppDelegate.swift */,
 				8113548A23E0B5E000C90A20 /* SceneDelegate.swift */,
 				8113548F23E0B5E000C90A20 /* ContentView.swift */,
+				811354A323E0B92D00C90A20 /* FilteredList.swift */,
 				8113549123E0B5E400C90A20 /* Assets.xcassets */,
 				8113549623E0B5E400C90A20 /* LaunchScreen.storyboard */,
 				8113549923E0B5E400C90A20 /* Info.plist */,
@@ -161,6 +164,7 @@
 				811354A123E0B73A00C90A20 /* Singer+CoreDataClass.swift in Sources */,
 				8113549023E0B5E000C90A20 /* ContentView.swift in Sources */,
 				8113548B23E0B5E000C90A20 /* SceneDelegate.swift in Sources */,
+				811354A423E0B92D00C90A20 /* FilteredList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
