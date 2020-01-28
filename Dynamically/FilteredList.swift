@@ -47,7 +47,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
       let oneEntity = entityItems[index]
       moc.delete(oneEntity)
     }//for
-    try? self.moc.save()
+    try? moc.save()
   }//removeTransaction
 }//FilteredList
 

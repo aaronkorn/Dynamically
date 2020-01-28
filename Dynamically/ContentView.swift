@@ -8,6 +8,8 @@
 //  Dynamically filtering @FetchRequest with SwiftUI
 //  per: Paul Hudson @twostraws December 21st 2019
 //  https://www.hackingwithswift.com/books/ios-swiftui/dynamically-filtering-fetchrequest-with-swiftui
+//
+//  Can FilteredList be used for SwiftUI Picker?
 
 import SwiftUI
 
