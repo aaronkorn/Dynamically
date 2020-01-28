@@ -22,7 +22,7 @@ struct ContentView: View {
       // list of matching singers
       FilteredList(filterKey: "lastName", filterValue: lastNameFilter) {
         (singer: Singer) in
-          Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+        Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
       }//FilteredList
       
       Button("Add Examples") {
@@ -51,7 +51,6 @@ struct ContentView: View {
       
     }//VStack
   }//body
-  
 }//ContentView
 
 struct ContentView_Previews: PreviewProvider {

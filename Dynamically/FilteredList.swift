@@ -11,6 +11,8 @@ import CoreData
 
 struct FilteredList<T: NSManagedObject, Content: View>: View {
   
+  @Environment(\.managedObjectContext) var moc
+  
   var fetchRequest: FetchRequest<T>
   
   var singers: FetchedResults<T> { fetchRequest.wrappedValue }
@@ -32,12 +34,21 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
   }//init
   
   var body: some View {
-    List(fetchRequest.wrappedValue, id: \.self) { singer in
-      
-      self.content(singer)
-      
+    List {
+      ForEach(fetchRequest.wrappedValue, id: \.self) { singer in
+        self.content(singer)
+      }//ForEach
+        .onDelete(perform: removeAccount)
     }//List
   }//body
+  
+  func removeAccount(at offsets: IndexSet) {
+    for index in offsets {
+      let oneSinger = singers[index]
+      moc.delete(oneSinger)
+    }//for
+    try? self.moc.save()
+  }//removeTransaction
 }//FilteredList
 
 struct FilteredList_Previews: PreviewProvider {
