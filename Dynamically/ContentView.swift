@@ -12,13 +12,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+  
+  @Environment(\.managedObjectContext) var moc
+  
+  @State private var lastNameFilter = "A"
+  
+  var body: some View {
+    Text("Hello, World!")
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
