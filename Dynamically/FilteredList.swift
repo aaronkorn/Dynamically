@@ -7,25 +7,34 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct FilteredList: View {
+struct FilteredList<T: NSManagedObject, Content: View>: View {
   
-  var fetchRequest: FetchRequest<Singer>
+  var fetchRequest: FetchRequest<T>
   
-  //var singers: FetchedResults<Singer> { fetchRequest.wrappedValue }
+  var singers: FetchedResults<T> { fetchRequest.wrappedValue }
   
-  init(filter: String) {
+  // this is our content closure; we'll call this once for each item in the list
+  let content: (T) -> Content
+  
+  init(filterKey: String,
+       filterValue: String,
+       @ViewBuilder content: @escaping (T) -> Content) {
+    
     fetchRequest =
-      FetchRequest<Singer>(
-        entity: Singer.entity(),
+      FetchRequest<T>(
+        entity: T.entity(),
         sortDescriptors: [],
-        predicate: NSPredicate(format: "lastName BEGINSWITH %@", filter))
+        predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+    
+    self.content = content
   }//init
   
   var body: some View {
     List(fetchRequest.wrappedValue, id: \.self) { singer in
       
-      Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+      self.content(singer)
       
     }//List
   }//body
@@ -33,6 +42,8 @@ struct FilteredList: View {
 
 struct FilteredList_Previews: PreviewProvider {
   static var previews: some View {
-    FilteredList(filter: "A")
-  }
+    FilteredList(filterKey: "lastName", filterValue: "A") { (singer: Singer) in
+      Text("Hello, World!")
+    }//FilteredList
+  }//previews
 }//FilteredList_Previews
