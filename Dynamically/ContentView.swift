@@ -20,6 +20,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       // list of matching singers
+      FilteredList(filter: lastNameFilter)
       
       Button("Add Examples") {
         let taylor = Singer(context: self.moc)
