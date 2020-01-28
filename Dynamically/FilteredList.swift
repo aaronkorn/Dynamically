@@ -15,7 +15,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
   
   var fetchRequest: FetchRequest<T>
   
-  var singers: FetchedResults<T> { fetchRequest.wrappedValue }
+  var entityItems: FetchedResults<T> { fetchRequest.wrappedValue }
   
   // this is our content closure; we'll call this once for each item in the list
   let content: (T) -> Content
@@ -35,8 +35,8 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
   
   var body: some View {
     List {
-      ForEach(fetchRequest.wrappedValue, id: \.self) { singer in
-        self.content(singer)
+      ForEach(fetchRequest.wrappedValue, id: \.self) { entity in
+        self.content(entity)
       }//ForEach
         .onDelete(perform: removeAccount)
     }//List
@@ -44,8 +44,8 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
   
   func removeAccount(at offsets: IndexSet) {
     for index in offsets {
-      let oneSinger = singers[index]
-      moc.delete(oneSinger)
+      let oneEntity = entityItems[index]
+      moc.delete(oneEntity)
     }//for
     try? self.moc.save()
   }//removeTransaction
@@ -53,7 +53,7 @@ struct FilteredList<T: NSManagedObject, Content: View>: View {
 
 struct FilteredList_Previews: PreviewProvider {
   static var previews: some View {
-    FilteredList(filterKey: "lastName", filterValue: "A") { (singer: Singer) in
+    FilteredList(filterKey: "lastName", filterValue: "A") { (entity: Singer) in
       Text("Hello, World!")
     }//FilteredList
   }//previews

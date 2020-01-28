@@ -21,8 +21,8 @@ struct ContentView: View {
     VStack {
       // list of matching singers
       FilteredList(filterKey: "lastName", filterValue: lastNameFilter) {
-        (singer: Singer) in
-        Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+        (entity: Singer) in
+        Text("\(entity.wrappedFirstName) \(entity.wrappedLastName)")
       }//FilteredList
       
       Button("Add Examples") {
