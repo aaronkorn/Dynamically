@@ -14,6 +14,8 @@
 		8113549223E0B5E400C90A20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8113549123E0B5E400C90A20 /* Assets.xcassets */; };
 		8113549523E0B5E400C90A20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8113549423E0B5E400C90A20 /* Preview Assets.xcassets */; };
 		8113549823E0B5E400C90A20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8113549623E0B5E400C90A20 /* LaunchScreen.storyboard */; };
+		811354A123E0B73A00C90A20 /* Singer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8113549F23E0B73A00C90A20 /* Singer+CoreDataClass.swift */; };
+		811354A223E0B73A00C90A20 /* Singer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811354A023E0B73A00C90A20 /* Singer+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8113549423E0B5E400C90A20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8113549723E0B5E400C90A20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8113549923E0B5E400C90A20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8113549F23E0B73A00C90A20 /* Singer+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		811354A023E0B73A00C90A20 /* Singer+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Singer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 		8113547C23E0B5DF00C90A20 = {
 			isa = PBXGroup;
 			children = (
+				8113549F23E0B73A00C90A20 /* Singer+CoreDataClass.swift */,
+				811354A023E0B73A00C90A20 /* Singer+CoreDataProperties.swift */,
 				8113548723E0B5E000C90A20 /* Dynamically */,
 				8113548623E0B5E000C90A20 /* Products */,
 			);
@@ -150,7 +156,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8113548923E0B5E000C90A20 /* AppDelegate.swift in Sources */,
+				811354A223E0B73A00C90A20 /* Singer+CoreDataProperties.swift in Sources */,
 				8113548E23E0B5E000C90A20 /* Dynamically.xcdatamodeld in Sources */,
+				811354A123E0B73A00C90A20 /* Singer+CoreDataClass.swift in Sources */,
 				8113549023E0B5E000C90A20 /* ContentView.swift in Sources */,
 				8113548B23E0B5E000C90A20 /* SceneDelegate.swift in Sources */,
 			);
