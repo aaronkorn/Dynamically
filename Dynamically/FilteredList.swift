@@ -12,6 +12,8 @@ struct FilteredList: View {
   
   var fetchRequest: FetchRequest<Singer>
   
+  //var singers: FetchedResults<Singer> { fetchRequest.wrappedValue }
+  
   init(filter: String) {
     fetchRequest =
       FetchRequest<Singer>(
@@ -21,7 +23,11 @@ struct FilteredList: View {
   }//init
   
   var body: some View {
-    Text("Hello, World!")
+    List(fetchRequest.wrappedValue, id: \.self) { singer in
+      
+      Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+      
+    }//List
   }//body
 }//FilteredList
 
